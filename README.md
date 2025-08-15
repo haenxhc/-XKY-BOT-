@@ -12,4 +12,3 @@
   <a href="https://github.com/haenxhc/XKY-BOT/fork"><img src="https://img.shields.io/github/forks/haenxhc/XKY-BOT?style=flat-square&color=lightblue"></a>
   <a href="https://whatsapp.com/channel/0029VbB98P7Fy72Ca6xIL736"><img src="https://img.shields.io/badge/WhatsApp-Channel-25D366?style=flat-square&logo=whatsapp"></a>
 </p>
-⛧ XKY⟡BOT ⛧ — Rapide, précis, toujours prêt.   Créé pour aider, programmé pour s’adapter.   Plus qu’un bot, un vrai allié numérique.
