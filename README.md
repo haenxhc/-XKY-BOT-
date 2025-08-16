@@ -1,7 +1,7 @@
 <h1 align="center">⛧ XKY⟡BOT ⛧</h1>
 
 <p align="center">
-  <img src="https://files.catbox.moe/d9ghms.jpg" width="300"/><br>
+  <img src="https://files.catbox.moe/l19pwj.jpg" width="300"/><br>
   <b>Rapide, précis, toujours prêt.<br>
   Créé pour aider, programmé pour s’adapter.<br>
   Plus qu’un bot, un vrai allié numérique.</b>
@@ -62,7 +62,7 @@ npm start
 
 🖼️ Aperçu
 
-![Aperçu du bot](https://files.catbox.moe/d9ghms.jpg)
+![Aperçu du bot](https://files.catbox.moe/l19pwj.jpg)
 
 ---
 
