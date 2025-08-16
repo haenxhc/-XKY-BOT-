@@ -1,0 +1,71 @@
+require('dotenv').config();
+const { default: makeWASocket, useMultiFileAuthState, fetchLatestBaileysVersion, DisconnectReason } = require("@whiskeysockets/baileys");
+const P = require("pino");
+const fs = require("fs");
+const path = require("path");
+
+(async () => {
+  const { state, saveCreds } = await useMultiFileAuthState('./auth_info');
+
+  const { version } = await fetchLatestBaileysVersion();
+  console.log(`XKY BOT WhatsApp version: v${version.join('.')}`);
+
+  const sock = makeWASocket({
+    version,
+    printQRInTerminal: true,
+    auth: state,
+    logger: P({ level: 'silent' }),
+  });
+
+  sock.ev.on('creds.update', saveCreds);
+
+  sock.ev.on('connection.update', (update) => {
+    const { connection, lastDisconnect } = update;
+    if(connection === 'close') {
+      const code = lastDisconnect?.error?.output?.statusCode;
+      if(code === DisconnectReason.loggedOut) {
+        console.log('Session déconnectée, reconnecte-toi manuellement.');
+        process.exit();
+      }
+      console.log('Déconnecté, tentative de reconnexion...');
+    } else if(connection === 'open') {
+      console.log('Connecté à WhatsApp');
+if(process.env.ALIVE_MSG        process.env.ALIVE_IMG) 
+        const owner = process.env.OWNER_JID || sock.user.id.split(':')[0] + '@s.whatsapp.net';
+        sock.sendMessage(owner,  image:  url: process.env.ALIVE_IMG , caption: process.env.ALIVE_MSG );
+      );
+
+  // Charger les commandes
+  const commands = new Map();
+  const commandFiles = fs.readdirSync(path.join(__dirname, 'commands')).filter(f => f.endsWith('.js'));
+  for(const file of commandFiles) 
+    const command = require(`./commands/{file}`);
+    commands.set(command.name, command);
+  }
+
+  sock.ev.on('messages.upsert', async ({ messages, type }) => {
+    if(type !== 'notify') return;
+    const msg = messages[0];
+    if(!msg.message || msg.key.fromMe) return;
+
+    let text = '';
+    if(msg.message.conversation) text = msg.message.conversation;
+    else if(msg.message.extendedTextMessage) text = msg.message.extendedTextMessage.text;
+    else return;
+
+    const prefix = process.env.PREFIX || '.';
+    if(!text.startsWith(prefix)) return;
+
+    const args = text.slice(prefix.length).trim().split(/ +/);
+    const commandName = args.shift().toLowerCase();
+
+    if(!commands.has(commandName)) return;
+
+    try {
+      await commands.get(commandName).execute(sock, msg, args);
+    } catch(e) {
+      console.error(e);
+await sock.sendMessage(msg.key.remoteJid, { text: "Une erreur est survenue lors de l'exécution de la commande." }, { quoted: msg });
+    }
+  });
+})();
