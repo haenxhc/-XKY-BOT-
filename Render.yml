@@ -1,0 +1,40 @@
+services:
+  - type: web
+    name: xky-bot
+    env: docker
+    dockerfilePath: Dockerfile
+    autoDeploy: false
+    plan: free
+    envVars:
+      - key: SESSION_ID
+        value: ""
+      - key: ALIVE_IMG
+        value: "https://files.catbox.moe/jfbed2.jpg"
+      - key: ALIVE_MSG
+        value: "_Hi bro am alive now🥷🏽🤝🏾._"
+      - key: PREFIX
+        value: "."
+      - key: MODE
+        value: "public"
+      - key: AUTO_VOICE
+        value: "true"
+      - key: AUTO_REPLY
+        value: "true"
+      - key: AUTO_STICKER
+        value: "false"
+      - key: AUTO_READ_STATUS
+        value: "true"
+      - key: ANTI_LINK
+        value: "true"
+      - key: ANTI_BAD
+        value: "false"
+      - key: FAKE_RECORDING
+        value: "true"
+      - key: AUTO_REACT
+        value: "false"
+      - key: OWNER_REACT
+        value: "false"
+      - key: BOT_NAME
+        value: "✦ 𝗫𝗞𝗬 𝗕𝗢𝗧 ✦"
+      - key: HEART_REACT
+        value: "false"
