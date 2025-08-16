@@ -1,0 +1,86 @@
+
+{
+  "name": "XKY-BOT",
+  "description": "⛧ Bot WhatsApp rapide, stylé et prêt à l’action — par *haenxhc*.",
+  "logo": "https://files.catbox.moe/d9ghms.jpg",
+  "keywords": ["whatsapp", "bot", "XKY", "nodejs", "termux", "render"],
+  "success_url": "/",
+  "stack": "container",
+  "env": {
+    "SESSION_ID": {
+      "description": "Insère ici ton identifiant de session WhatsApp.",
+      "required": true,
+      "value": ""
+    },
+    "ALIVE_IMG": {
+      "description": "URL de l'image pour la commande alive.",
+      "required": false,
+      "value": "https://files.catbox.moe/jfbed2.jpg"
+    },
+    "ALIVE_MSG": {
+      "description": "Message de statut alive du bot.",
+      "required": false,
+      "value": "⛧ *XKY-BOT* est actif et prêt à l'action."
+    },
+    "PREFIX": {
+      "description": "Préfixe pour les commandes.",
+      "required": true,
+      "value": "."
+    },
+    "MODE": {
+      "description": "Mode de fonctionnement : public, private, group.",
+      "required": true,
+      "value": "public"
+    },
+    "OWNER_NAME": {
+      "description": "Nom du propriétaire du bot.",
+      "required": false,
+      "value": "haenxhc"
+    },
+    "OWNER_NUMBER": {
+      "description": "Numéro WhatsApp du propriétaire.",
+      "required": false,
+      "value": "+50932794386"
+    },
+"BOT_NAME": {
+      "description": "Nom personnalisé du bot.",
+      "required": true,
+      "value": "⛧ XKY⟡BOT ⛧"
+    },
+    "AUTO_READ_STATUS": {
+      "description": "Lecture automatique des statuts.",
+      "required": false,
+      "value": "true"
+    },
+    "AUTO_REPLY": {
+      "description": "Réponse automatique activée.",
+      "required": false,
+      "value": "true"
+    },
+    "AUTO_REACT": {
+      "description": "Réactions automatiques aux messages.",
+      "required": false,
+      "value": "false"
+    },
+    "ANTI_LINK": {
+      "description": "Supprimer les liens dans les groupes.",
+      "required": false,
+      "value": "true"
+    },
+    "ANTI_BAD": {
+      "description": "Filtrer les mots interdits.",
+      "required": false,
+      "value": "true"
+    },
+    "FAKE_RECORDING": {
+      "description": "Activer le fake recording.",
+      "required": false,
+      "value": "false"
+    },
+    "AUTO_STICKER": {
+      "description": "Générer un sticker automatique.",
+      "required": false,
+      "value": "false"
+    }
+  }
+}
